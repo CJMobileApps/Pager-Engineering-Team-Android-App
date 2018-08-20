@@ -1,9 +1,9 @@
 package com.pager.pagerchallenge;
 
-import io.reactivex.Flowable;
+import java.io.IOException;
 import java.util.Map;
 
-public interface RolesRepository {
+interface RolesRepository {
 
-  Flowable<Map<String, String>> get();
+  Map<String, String> all() throws IOException;
 }

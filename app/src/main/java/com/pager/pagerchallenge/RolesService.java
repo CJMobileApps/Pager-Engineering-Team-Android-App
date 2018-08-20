@@ -1,11 +1,11 @@
 package com.pager.pagerchallenge;
 
-import io.reactivex.Flowable;
 import java.util.Map;
+import retrofit2.Call;
 import retrofit2.http.GET;
 
 interface RolesService {
 
   @GET("/roles")
-  Flowable<Map<String, String>> roles();
+  Call<Map<String, String>> roles();
 }
