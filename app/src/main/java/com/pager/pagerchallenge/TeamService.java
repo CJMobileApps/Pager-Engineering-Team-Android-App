@@ -1,26 +1,75 @@
 package com.pager.pagerchallenge;
 
-import io.reactivex.Flowable;
+import com.squareup.moshi.Json;
 import java.util.List;
+import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface TeamService {
 
   @GET("/team")
-  Flowable<List<TeamResponse>> team();
+  Call<List<TeamResponse>> team();
 
   class TeamResponse {
 
-    public String name;
+    @Json(name = "name")
+    private final String name;
 
-    public String avatar;
+    @Json(name = "avatar")
+    private final String avatar;
 
-    public String github;
+    @Json(name = "github")
+    private final String github;
 
-    public String location;
+    @Json(name = "location")
+    private final String location;
 
-    public List<String> languages, tags;
+    @Json(name = "languages")
+    private final List<String> languages;
 
-    public Integer role;
+    @Json(name = "tags")
+    private final List<String> tags;
+
+    @Json(name = "role")
+    private final Integer role;
+
+    public TeamResponse(String name, String avatar, String github, String location,
+      List<String> languages, List<String> tags, Integer role) {
+      this.name = name;
+      this.avatar = avatar;
+      this.github = github;
+      this.location = location;
+      this.languages = languages;
+      this.tags = tags;
+      this.role = role;
+    }
+
+    public String name() {
+      return name;
+    }
+
+    public String avatar() {
+      return avatar;
+    }
+
+    public String github() {
+      return github;
+    }
+
+    public String location() {
+      return location;
+    }
+
+    public List<String> languages() {
+      return languages;
+    }
+
+    public List<String> tags() {
+      return tags;
+    }
+
+    public Integer role() {
+      return role;
+    }
   }
 }

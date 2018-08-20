@@ -1,11 +1,18 @@
 package com.pager.pagerchallenge;
 
-import io.reactivex.Completable;
-import io.reactivex.Flowable;
+interface EventsRepository {
 
-public interface EventsRepository {
+  void connect(Listener listener);
 
-  Flowable<String> get();
+  enum Type {NEW_USER, CHANGE_STATUS;}
 
-  Completable send(final String message);
+  interface Event {
+
+    Type type();
+  }
+
+  interface Listener {
+
+    void onEvent(Event event);
+  }
 }
