@@ -27,7 +27,6 @@ The main goal of the test is to see the skills of next areas:
 
 - Display updated data through a socket server at: `http://ios-hiring-backend.dokku.canillitapp.com`
 
-
 1) Full users or updated users
 ```
 {
