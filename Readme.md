@@ -25,7 +25,7 @@ The main goal of the test is to see the skills of next areas:
 
 - Unit tests: No need to go grazy here, tests are important, having 100% coverage not always is.
 
-- Display updated data through a socket server at: `ws://104.236.4.78:8080`
+- Display updated data through a socket server at: `http://ios-hiring-backend.dokku.canillitapp.com`
 
 1) Full users or updated users
 ```
