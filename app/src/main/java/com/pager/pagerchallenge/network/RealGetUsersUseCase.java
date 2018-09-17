@@ -1,16 +1,17 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
 
-import com.pager.pagerchallenge.EventsRepository.Type;
-import com.pager.pagerchallenge.SocketRepository.EventNewUser;
-import com.pager.pagerchallenge.SocketRepository.EventStatus;
-import com.pager.pagerchallenge.SocketRepository.EventUser;
-import com.pager.pagerchallenge.TeamRepository.Member;
+import com.pager.pagerchallenge.network.EventsRepository.Type;
+import com.pager.pagerchallenge.network.SocketRepository.EventNewUser;
+import com.pager.pagerchallenge.network.SocketRepository.EventStatus;
+import com.pager.pagerchallenge.network.SocketRepository.EventUser;
+import com.pager.pagerchallenge.network.TeamRepository.Member;
+
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import java.util.List;
 import java.util.Map;
 
-final class RealGetUsersUseCase {
+public final class RealGetUsersUseCase {
 
   private final RolesRepository rolesRepository;
 
@@ -18,14 +19,14 @@ final class RealGetUsersUseCase {
 
   private final EventsRepository eventsRepository;
 
-  RealGetUsersUseCase(RolesRepository rolesRepository, TeamRepository teamRepository,
-    EventsRepository eventsRepository) {
+  public RealGetUsersUseCase(RolesRepository rolesRepository, TeamRepository teamRepository,
+                             EventsRepository eventsRepository) {
     this.rolesRepository = rolesRepository;
     this.teamRepository = teamRepository;
     this.eventsRepository = eventsRepository;
   }
 
-  Flowable<User> exec() {
+  public Flowable<User> exec() {
     return Flowable.create(emitter -> {
       Map<String, String> roles = rolesRepository.all();
       List<Member> team = teamRepository.all();

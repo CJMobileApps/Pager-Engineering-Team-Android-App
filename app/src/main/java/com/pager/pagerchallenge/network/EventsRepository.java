@@ -1,4 +1,4 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
 
 interface EventsRepository {
 

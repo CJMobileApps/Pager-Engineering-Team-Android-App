@@ -1,15 +1,16 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
+
 
 import java.io.IOException;
 import java.util.Map;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-final class HttpRolesRepository implements RolesRepository {
+public final class HttpRolesRepository implements RolesRepository {
 
   private final RolesService service;
 
-  HttpRolesRepository(Retrofit retrofit) {
+  public HttpRolesRepository(Retrofit retrofit) {
     service = retrofit.create(RolesService.class);
   }
 

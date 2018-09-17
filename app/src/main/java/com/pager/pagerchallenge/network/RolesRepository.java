@@ -1,4 +1,4 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
 
 import java.io.IOException;
 import java.util.Map;

@@ -1,5 +1,6 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
 
+import com.pager.pagerchallenge.network.EventsRepository;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.Moshi;
 import java.util.List;
@@ -8,7 +9,7 @@ import okhttp3.Request;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 
-final class SocketRepository implements EventsRepository {
+public final class SocketRepository implements EventsRepository {
 
   private final String url;
 
@@ -16,7 +17,7 @@ final class SocketRepository implements EventsRepository {
 
   private final Moshi moshi;
 
-  SocketRepository(String url, OkHttpClient client, Moshi moshi) {
+  public SocketRepository(String url, OkHttpClient client, Moshi moshi) {
     this.url = url;
     this.client = client;
     this.moshi = moshi;

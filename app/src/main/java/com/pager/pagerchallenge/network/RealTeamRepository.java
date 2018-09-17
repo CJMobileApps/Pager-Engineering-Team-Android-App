@@ -1,17 +1,18 @@
-package com.pager.pagerchallenge;
+package com.pager.pagerchallenge.network;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Retrofit;
 
-final class RealTeamRepository implements TeamRepository {
+public final class RealTeamRepository implements TeamRepository {
 
   private final TeamService service;
 
   private List<Member> team;
 
-  RealTeamRepository(Retrofit retrofit) {
+  public RealTeamRepository(Retrofit retrofit) {
     this(retrofit.create(TeamService.class));
   }
 
