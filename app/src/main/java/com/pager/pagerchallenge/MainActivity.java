@@ -27,8 +27,10 @@ public class MainActivity extends AppCompatActivity {
         new SocketRepository("http://ios-hiring-backend.dokku.canillitapp.com", new OkHttpClient(),
           new Builder().build()));
     disposable.add(
-      useCase.exec().subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
-        .subscribe(user -> Log.v("User", user.toString()),
-          throwable -> Log.v("Error", throwable.toString())));
+      useCase.exec()
+              .subscribeOn(Schedulers.computation())
+              .observeOn(AndroidSchedulers.mainThread())
+              .subscribe(user -> Log.v("HERE_", user.toString()),
+                  throwable -> Log.v("Error", throwable.toString())));
   }
 }
