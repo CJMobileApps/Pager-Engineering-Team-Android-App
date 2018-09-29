@@ -1,6 +1,6 @@
-package com.pager.pagerchallenge.network;
+package com.pager.pagerchallenge.network.repository;
 
-interface EventsRepository {
+public interface IEventsRepository {
 
   void connect(Listener listener);
 

@@ -1,7 +1,7 @@
 package com.pager.pagerchallenge.main.dagger;
 
 import com.pager.pagerchallenge.dagger.PagerChallengeAndroidApplicationComponent;
-import com.pager.pagerchallenge.main.MainActivity;
+import com.pager.pagerchallenge.main.view.MainActivity;
 
 import dagger.Component;
 

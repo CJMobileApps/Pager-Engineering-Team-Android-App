@@ -1,6 +1,6 @@
 package com.pager.pagerchallenge.main.dagger;
 
-import com.pager.pagerchallenge.main.MainPresenter;
+import com.pager.pagerchallenge.main.presenter.MainPresenter;
 import com.pager.pagerchallenge.main.navigator.MainPresenterToViewNavigator;
 import com.pager.pagerchallenge.main.view.MainAdapter;
 import com.pager.pagerchallenge.network.NetworkService;

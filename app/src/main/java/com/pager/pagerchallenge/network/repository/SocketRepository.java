@@ -1,6 +1,5 @@
-package com.pager.pagerchallenge.network;
+package com.pager.pagerchallenge.network.repository;
 
-import com.pager.pagerchallenge.network.EventsRepository;
 import com.squareup.moshi.Json;
 import com.squareup.moshi.Moshi;
 import java.util.List;
@@ -9,7 +8,7 @@ import okhttp3.Request;
 import okhttp3.WebSocket;
 import okhttp3.WebSocketListener;
 
-public final class SocketRepository implements EventsRepository {
+public final class SocketRepository implements IEventsRepository {
 
   private final String url;
 
@@ -77,7 +76,7 @@ public final class SocketRepository implements EventsRepository {
     return newUser != null && newUser.user != null && newUser.event.equals("user_new");
   }
 
-  static final class EventStatus implements Event {
+  public static final class EventStatus implements Event {
 
     @Json(name = "event")
     private final String event;
@@ -112,7 +111,7 @@ public final class SocketRepository implements EventsRepository {
     }
   }
 
-  static final class EventNewUser implements Event {
+  public static final class EventNewUser implements Event {
 
     @Json(name = "event")
     private final String event;
@@ -139,7 +138,7 @@ public final class SocketRepository implements EventsRepository {
     }
   }
 
-  static final class EventUser {
+  public static final class EventUser {
 
     @Json(name = "name")
     private final String name;

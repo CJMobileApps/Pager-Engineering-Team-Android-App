@@ -1,9 +1,12 @@
 package com.pager.pagerchallenge.main.navigator;
 
-import com.pager.pagerchallenge.network.User;
+
+import com.pager.pagerchallenge.network.model.User;
 
 import java.util.List;
 
 public interface MainPresenterToViewNavigator {
-    public void setUsersToAdapter(List<User> mUserList);
+    void setUsersToAdapter(List<User> userList);
+    void showProgressDialog();
+    void dismissProgressDialog();
 }

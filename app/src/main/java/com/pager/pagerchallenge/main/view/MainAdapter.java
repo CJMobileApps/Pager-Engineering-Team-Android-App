@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pager.pagerchallenge.R;
-import com.pager.pagerchallenge.network.User;
+import com.pager.pagerchallenge.network.model.User;
 
 import java.util.List;
 
@@ -34,8 +34,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainAdapterHol
         return mUserList == null ? 0 : mUserList.size();
     }
 
-    public void setUserList(List<User> mUserList) {
-        this.mUserList = mUserList;
+    public void setUsersList(List<User> userList) {
+        this.mUserList = userList;
         notifyDataSetChanged();
     }
 

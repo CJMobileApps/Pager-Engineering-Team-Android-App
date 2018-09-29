@@ -2,14 +2,14 @@ package com.pager.pagerchallenge;
 
 import com.pager.pagerchallenge.network.EventsRepository;
 import com.pager.pagerchallenge.network.EventsRepository.Listener;
-import com.pager.pagerchallenge.network.SocketRepository.EventNewUser;
-import com.pager.pagerchallenge.network.SocketRepository.EventStatus;
-import com.pager.pagerchallenge.network.SocketRepository.EventUser;
+import com.pager.pagerchallenge.network.repository.SocketRepository.EventNewUser;
+import com.pager.pagerchallenge.network.repository.SocketRepository.EventStatus;
+import com.pager.pagerchallenge.network.repository.SocketRepository.EventUser;
 import com.pager.pagerchallenge.network.TeamRepository;
 import com.pager.pagerchallenge.network.TeamRepository.Member;
 import com.pager.pagerchallenge.network.RealGetUsersUseCase;
 import com.pager.pagerchallenge.network.RolesRepository;
-import com.pager.pagerchallenge.network.User;
+import com.pager.pagerchallenge.network.model.User;
 
 import io.reactivex.subscribers.TestSubscriber;
 import java.util.ArrayList;

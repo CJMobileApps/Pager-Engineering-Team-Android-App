@@ -1,4 +1,4 @@
-package com.pager.pagerchallenge.network;
+package com.pager.pagerchallenge.network.service;
 
 import com.squareup.moshi.Json;
 import java.util.List;
