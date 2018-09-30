@@ -1,5 +1,7 @@
 package com.pager.pagerchallenge.main.presenter.result;
 
+import android.util.Log;
+
 import java.util.Map;
 
 final public class RolesResult extends MainResult {
@@ -32,6 +34,7 @@ final public class RolesResult extends MainResult {
     }
 
     public static RolesResult failure(String errorMessage) {
+        Log.d("HERE_", "failure: roles " + errorMessage);
         return new RolesResult(false, false, errorMessage, true, null);
     }
 

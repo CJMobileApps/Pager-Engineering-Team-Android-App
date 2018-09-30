@@ -72,7 +72,7 @@ public class MainPresenter {
                     .onErrorReturn(t -> NewStatusOrNewUserResult.failure(t.getMessage()))
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    //.startWith()
+                    .startWith(NewStatusOrNewUserResult.inProgress())
             );
         }
     };
@@ -113,7 +113,7 @@ public class MainPresenter {
             }
             //No roles to use
         } else {
-            currentUser.setRole("Not available");
+            currentUser.setStatus("Not available");
             userList.add(currentUser);
         }
 

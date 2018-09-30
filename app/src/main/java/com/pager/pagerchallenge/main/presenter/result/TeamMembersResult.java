@@ -1,5 +1,7 @@
 package com.pager.pagerchallenge.main.presenter.result;
 
+import android.util.Log;
+
 import com.pager.pagerchallenge.network.model.TeamMember;
 
 import java.util.List;
@@ -35,6 +37,7 @@ final public class TeamMembersResult extends MainResult {
     }
 
     public static TeamMembersResult failure(String errorMessage) {
+        Log.d("HERE_", "failure: teamResult " + errorMessage);
         return new TeamMembersResult(false, false, errorMessage, true, null);
     }
 

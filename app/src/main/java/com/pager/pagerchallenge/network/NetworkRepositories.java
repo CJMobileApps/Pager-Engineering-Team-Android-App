@@ -74,31 +74,6 @@ public final class NetworkRepositories {
         }, BackpressureStrategy.LATEST);
     }
 
-  /*public Flowable<User> exec() {
-    return Flowable.create(emitter -> {
-      Map<String, String> roles = IRolesRepository.all();
-      List<TeamMember> team = ITeamRepository.all();
-      for (TeamMember teamMember : team) {
-        String role = roleFor(roles, teamMember);
-        emitter.onNext(map(teamMember, role, ""));
-      }
-      IEventsRepository.connect(event -> {
-        if (event.type() == Type.NEW_USER) {
-          EventNewUser userEvent = (EventNewUser) event;
-          TeamMember user = map(userEvent.user());
-          String role = roleFor(roles, user);
-          ITeamRepository.add(user);
-          emitter.onNext(map(user, role, ""));
-        } else if (event.type() == Type.CHANGE_STATUS) {
-          EventStatus eventStatus = (EventStatus) event;
-          TeamMember user = ITeamRepository.findByGithub(eventStatus.user());
-          String role = roleFor(roles, user);
-          emitter.onNext(map(user, role, eventStatus.state()));
-        }
-      });
-    }, BackpressureStrategy.LATEST);
-  } */
-
     private TeamMember eventUserToTeamMember(EventUser user) {
         return new TeamMember(user.name(), user.avatar(), user.github(), user.languages(), user.tags(),
                 user.location(), user.role());
@@ -107,13 +82,4 @@ public final class NetworkRepositories {
     private User teamMemberAndStatusToUser(TeamMember teamMember, String status) {
         return new User(teamMember.name(), teamMember.languages(), teamMember.skills(), teamMember.location(), status, String.valueOf(teamMember.role()));
     }
-
-    /*private String roleFor(Map<String, String> roles, TeamMember teamMember) {
-        String key = String.valueOf(teamMember.role());
-        if (roles.containsKey(key)) {
-            return roles.get(key);
-        } else {
-            return "";
-        }
-    } */
 }

@@ -14,6 +14,7 @@ import com.pager.pagerchallenge.main.dagger.DaggerMainComponent;
 import com.pager.pagerchallenge.main.dagger.MainComponent;
 import com.pager.pagerchallenge.main.dagger.MainModule;
 import com.pager.pagerchallenge.main.navigator.MainPresenterToViewNavigator;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

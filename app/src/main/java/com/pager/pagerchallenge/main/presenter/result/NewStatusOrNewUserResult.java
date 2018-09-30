@@ -1,5 +1,7 @@
 package com.pager.pagerchallenge.main.presenter.result;
 
+import android.util.Log;
+
 import com.pager.pagerchallenge.network.model.User;
 
 import java.util.List;
@@ -35,6 +37,7 @@ final public class NewStatusOrNewUserResult extends MainResult {
     }
 
     public static NewStatusOrNewUserResult failure(String errorMessage) {
+        Log.d("HERE_", "failure: newStatus "+ errorMessage);
         return new NewStatusOrNewUserResult(false, false, errorMessage, true, null);
     }
 

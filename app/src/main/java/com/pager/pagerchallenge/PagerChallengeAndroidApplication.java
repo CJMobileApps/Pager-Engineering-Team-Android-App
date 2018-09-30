@@ -6,6 +6,7 @@ import android.content.Context;
 
 import com.pager.pagerchallenge.dagger.DaggerPagerChallengeAndroidApplicationComponent;
 import com.pager.pagerchallenge.dagger.PagerChallengeAndroidApplicationComponent;
+import com.pager.pagerchallenge.dagger.module.ContextModule;
 
 
 public class PagerChallengeAndroidApplication extends Application {
@@ -24,7 +25,8 @@ public class PagerChallengeAndroidApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        mPagerChallengeAndroidApplicationComponent = DaggerPagerChallengeAndroidApplicationComponent.builder().build();
+        mPagerChallengeAndroidApplicationComponent = DaggerPagerChallengeAndroidApplicationComponent.builder()
+                .contextModule(new ContextModule(this)).build();
 
         mPagerChallengeAndroidApplicationComponent.injectPagerChallengeAndroidApplicationComponent(this);
     }
@@ -32,5 +34,4 @@ public class PagerChallengeAndroidApplication extends Application {
     public PagerChallengeAndroidApplicationComponent getPagerChallengeAndroidApplicationComponent() {
         return mPagerChallengeAndroidApplicationComponent;
     }
-
 }
