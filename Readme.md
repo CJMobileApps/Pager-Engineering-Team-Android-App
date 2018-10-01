@@ -58,8 +58,7 @@ The following functionality is completed:
      * [X] Part 4: Have a hide and show progress dialog
      * [X] Part 5: Display information in Recycler View
      
-     Features to be implemented in the future:
-
+Features to be implemented in the future:
 * [ ] Add unit test
 
 ## Video Walkthrough
