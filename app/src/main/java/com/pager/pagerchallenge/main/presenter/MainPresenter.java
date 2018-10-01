@@ -154,7 +154,9 @@ public class MainPresenter {
                                     teamMember.skills(),
                                     teamMember.location(),
                                     "Not available",
-                                    role);
+                                    role,
+                                    teamMember.avatar(),
+                                    teamMember.github());
 
                             if (!userSet.contains(user)) {
                                 userList.add(user);

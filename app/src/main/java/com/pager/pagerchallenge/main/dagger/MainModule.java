@@ -4,6 +4,7 @@ import com.pager.pagerchallenge.main.presenter.MainPresenter;
 import com.pager.pagerchallenge.main.navigator.MainPresenterToViewNavigator;
 import com.pager.pagerchallenge.main.view.MainAdapter;
 import com.pager.pagerchallenge.network.NetworkService;
+import com.squareup.picasso.Picasso;
 
 import dagger.Module;
 import dagger.Provides;
@@ -31,8 +32,8 @@ public class MainModule {
 
     @MainScope
     @Provides
-    public MainAdapter mainAdapter() {
-        return new MainAdapter();
+    public MainAdapter mainAdapter(Picasso picasso) {
+        return new MainAdapter(picasso);
     }
 
 }

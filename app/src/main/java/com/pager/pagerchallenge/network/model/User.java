@@ -16,14 +16,20 @@ final public class User {
 
     private String role;
 
+    private String avatar;
+
+    private String github;
+
     public User(String name, List<String> languages, List<String> skills, String location, String status,
-                String role) {
+                String role, String avatar, String github) {
         this.name = name;
         this.languages = languages;
         this.skills = skills;
         this.location = location;
         this.status = status;
         this.role = role;
+        this.avatar = avatar;
+        this.github = github;
     }
 
     public String getName() {
@@ -34,15 +40,7 @@ final public class User {
         this.name = name;
     }
 
-    public List<String> languages() {
-        return languages;
-    }
-
-    public List<String> skills() {
-        return skills;
-    }
-
-    public String location() {
+    public String getLocation() {
         return location;
     }
 
@@ -58,8 +56,28 @@ final public class User {
         return role;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public String getLanguages() {
+        return languages.toString();
+    }
+
+    public String getSkills() {
+        return skills.toString();
     }
 
     @Override
@@ -86,6 +104,11 @@ final public class User {
         if (!status.equals(user.status)) {
             return false;
         }
+
+        if (!github.equals(user.github)) {
+            return false;
+        }
+
         return role.equals(user.role);
     }
 
@@ -97,6 +120,7 @@ final public class User {
         result = 31 * result + skills.hashCode();
         result = 31 * result + location.hashCode();
         result = 31 * result + role.hashCode();
+        result = 31 * result + github.hashCode();
         return result;
     }
 

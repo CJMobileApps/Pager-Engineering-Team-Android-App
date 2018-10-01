@@ -80,6 +80,8 @@ public final class NetworkRepositories {
     }
 
     private User teamMemberAndStatusToUser(TeamMember teamMember, String status) {
-        return new User(teamMember.name(), teamMember.languages(), teamMember.skills(), teamMember.location(), status, String.valueOf(teamMember.role()));
+        return new User(teamMember.name(), teamMember.languages(),
+                teamMember.skills(), teamMember.location(),
+                status, String.valueOf(teamMember.role()), teamMember.avatar(), teamMember.github());
     }
 }
