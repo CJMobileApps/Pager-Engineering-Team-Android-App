@@ -1,5 +1,7 @@
 package com.pager.pagerchallenge.network;
 
+import android.util.Log;
+
 import com.pager.pagerchallenge.network.repository.IEventsRepository;
 import com.pager.pagerchallenge.network.repository.IEventsRepository.Type;
 import com.pager.pagerchallenge.network.repository.IRolesRepository;

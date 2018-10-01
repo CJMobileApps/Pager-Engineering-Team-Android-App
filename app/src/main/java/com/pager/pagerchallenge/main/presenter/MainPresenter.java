@@ -99,6 +99,7 @@ public class MainPresenter {
     private NewStatusOrNewUserResult getNewStatusOrNewUserResult(User currentUser, List<User> userList, Map<Integer, String> rolesMap) {
         //If user result already finished
         if (rolesMap != null) {
+
             boolean userFound = false;
             for (User user : userList) {
                 if (user.getName().equals(currentUser.getName())) {
@@ -109,6 +110,8 @@ public class MainPresenter {
             }
 
             if (!userFound) {
+                String role = rolesMap.get(Integer.valueOf(currentUser.role()));
+                currentUser.setRole(role);
                 userList.add(currentUser);
             }
             //No roles to use
