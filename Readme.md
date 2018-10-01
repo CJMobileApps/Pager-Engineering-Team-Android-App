@@ -63,7 +63,9 @@ Features to be implemented in the future:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a screenshot and walkthrough video of implemented user stories:
+
+<img src='https://i.imgur.com/cTBUtbk.png' title='User Story 1 Screen shot' width='' alt='User Story 1 Screen Shot' />
 
 [walkthrough video](https://imgur.com/a/WEELQGu)
 
