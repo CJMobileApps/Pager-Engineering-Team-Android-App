@@ -1,14 +1,16 @@
 package com.pager.pagerchallenge.network.service;
 
 import com.squareup.moshi.Json;
+
 import java.util.List;
-import retrofit2.Call;
+
+import io.reactivex.Single;
 import retrofit2.http.GET;
 
 public interface TeamService {
 
   @GET("/team")
-  Call<List<TeamResponse>> team();
+  Single<List<TeamResponse>> team();
 
   class TeamResponse {
 
